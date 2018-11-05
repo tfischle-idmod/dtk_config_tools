@@ -52,10 +52,13 @@ if __name__ == '__main__':
         allwindows = True
     
     if bad_args:
-        print("usage: %s <-failedonly> xmlReportFile   To update files on a Windows machine with files of failing tests on a Windows machine (i.e. VS build) " % (sys.argv[0]) )
-        print("usage: %s <-failedonly-Linux2Win> xmlReportFile    To update files on a Windows machine with files of failing tests on a Linux machine (i.e. Linux build)" % (sys.argv[0]))
-        print("usage: %s <-allwindows> xmlReportFile    Copies all files from a Windwos machine to a windows machine (i.e. windows build)" % (
-            sys.argv[0]))
+        print("usage: %s <-failedonly> xmlReportFile   To update files on a Windows machine with files of failing "
+              "tests on a Windows machine (i.e. VS build) " % (sys.argv[0]) )
+        print("usage: %s <-failedonly-Linux2Win> xmlReportFile    To update InsetChart(s) of failing tests on a "
+              "Windows machine with files from a Linux machine (i.e. Linux build). Files are as saved as "
+              "InsetChart.linux.json" % (sys.argv[0]))
+        print("usage: %s <-allwindows> xmlReportFile   Copies all files of a failing test from a Windwos machine to a "
+              "Windows machine (i.e. windows build)" % (sys.argv[0]))
     else:
         report_xml = xml.parse( sys.argv[ file_index ] )
 
@@ -78,6 +81,7 @@ if __name__ == '__main__':
                     print( "copy " + path_inset_chart + " to " + reg_path_linux )
                     shutil.copy(path_inset_chart, reg_path_linux)
                 except:
+                    print("ERROR copying ", path_inset_chart + " to " + reg_path_linux)
                     continue
 
             elif allwindows:
