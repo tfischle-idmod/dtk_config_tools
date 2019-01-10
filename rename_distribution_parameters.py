@@ -9,6 +9,7 @@ import json
 import os
 import argparse
 import utils
+from multiprocessing import Pool
 
 #Constants
 All_sim_types = ["GENERIC_SIM", "VECTOR_SIM", "MALARIA_SIM", "ENVIRONMENTAL_SIM", "POLIO_SIM", "AIRBORNE_SIM", "TB_SIM", "TBHIV_SIM", "STI_SIM", "HIV_SIM", "PY_SIM", "TYPHOID_SIM", "DENGUE_SIM"]
@@ -24,6 +25,8 @@ All_sim_types = ["GENERIC_SIM", "VECTOR_SIM", "MALARIA_SIM", "ENVIRONMENTAL_SIM"
 #                "Enable_Maternal_Antibodies_Transmission":0}, All_sim_types],
 #             [{"Enable_Skipping": 0}, ["GENERIC_SIM", "TB_SIM"]]
 #         ]
+
+global commandline_args
 
 add_table=[
             [{"Symptomatic_Infectious_Offset": 0}, "", utils.condition_sim_type, All_sim_types]
@@ -72,29 +75,9 @@ def getCommandLineArgs():
     args = parser.parse_args()
     return args
 
-
-#use directory
-#WorkingDir = os.path.normcase(r"C:\\Users\\tfischle\\Github\\DtkTrunk_master_213\\Regression\\Multicore_Nosibe\\42_Vector_SimpleIndividualRepellent")
-#name_config_file = "config.json"    # sub strings like ".json", "overrides.json" works as well
-commandline_args = getCommandLineArgs()
-WorkingDir = os.path.normpath(commandline_args.directory)
-name_config_file = commandline_args.file_name
-
-if commandline_args.r:
-    file_list = []
-    dirs = utils.getFilesFromSubDir(WorkingDir, name_config_file, file_list)
-else:
-    dirs = [WorkingDir + "\\" + name_config_file]
-
-if commandline_args.replace_table:
-    replace_table = json.loads(commandline_args.replace_table)
-    for idx, row in enumerate(replace_table):
-        if row[utils.Idx_condition_fct] == "All_sim_types":
-            replace_table[idx][utils.Idx_condition_fct] = All_sim_types
-
-print("converting: ", [os.path.normpath(f) for f in dirs])
-
-for config_file in dirs:
+def replace(fct_params):
+    config_file = fct_params[0]
+    addNewParameters = fct_params[1]
     replaced = False  # File changed?
     print("Opening: ", config_file)
     # try to determine sim type and add parameters
@@ -103,7 +86,8 @@ for config_file in dirs:
             j = json.load(f)
         except Exception as e:
             print("Error could not load :", config_file, "\n",  e)
-            continue
+            #continue
+            return #multiprocessing
         # if "parameters" in j.keys():
         #     if "Simulation_Type" in j["parameters"].keys():
         #         sim_type = j["parameters"]["Simulation_Type"]    # works only in config.json
@@ -114,7 +98,7 @@ for config_file in dirs:
 
         sim_type = DefaultSimType
 
-        if commandline_args.addNewParameters:
+        if addNewParameters:
             for row in add_table:
                 if row[utils.Idx_condition_fct](sim_type, None, row):
                     for key, val in row[0].items():
@@ -134,6 +118,36 @@ for config_file in dirs:
             f.truncate()
             #new_file = '\n'.join(str(line) for line in content) #create string
             json.dump(j, f, sort_keys=commandline_args.sortJson, indent=2, separators=(',', ': '))
+
+
+if __name__ == '__main__':
+    #use directory
+    #WorkingDir = os.path.normcase(r"C:\\Users\\tfischle\\Github\\DtkTrunk_master_213\\Regression\\Multicore_Nosibe\\42_Vector_SimpleIndividualRepellent")
+    #name_config_file = "config.json"    # sub strings like ".json", "overrides.json" works as well
+    commandline_args = getCommandLineArgs()
+    WorkingDir = os.path.normpath(commandline_args.directory)
+    name_config_file = commandline_args.file_name
+
+    if commandline_args.r:
+        file_list = []
+        dirs = utils.getFilesFromSubDir(WorkingDir, name_config_file, file_list)
+    else:
+        dirs = [WorkingDir + "\\" + name_config_file]
+
+    if commandline_args.replace_table:
+        replace_table = json.loads(commandline_args.replace_table)
+        for idx, row in enumerate(replace_table):
+            if row[utils.Idx_condition_fct] == "All_sim_types":
+                replace_table[idx][utils.Idx_condition_fct] = All_sim_types
+
+    print("converting: ", [os.path.normpath(f) for f in dirs])
+
+    # for config_file in dirs:
+    #     replace(config_file)
+    fct_params = [[dir, commandline_args.addNewParameters] for dir in dirs]
+    with Pool(processes=10) as pool:
+        pool.map(replace, fct_params)
+
 
     # with open(config_file, 'w') as f:
     #     json.dump(j, f, sort_keys=True, indent=4, separators=(',', ': '))
