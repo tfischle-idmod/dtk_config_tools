@@ -82,7 +82,7 @@ def replace_in_dict(dic, replace_table, sim_type):
         for d in dic:
             replaced = replace_in_dict(d, replace_table, sim_type) or replaced
     elif isinstance(dic, dict):
-        for key, value in dic.items():
+        for key, value in list(dic.items()):
             #print("key: ", key, "    value: ", value)
             for entry in replace_table:
                 if entry[Idx_condition_fct](sim_type, dic, entry): # call condition function to see if string needs to be replaced

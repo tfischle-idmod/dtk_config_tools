@@ -26,8 +26,6 @@ All_sim_types = ["GENERIC_SIM", "VECTOR_SIM", "MALARIA_SIM", "ENVIRONMENTAL_SIM"
 #             [{"Enable_Skipping": 0}, ["GENERIC_SIM", "TB_SIM"]]
 #         ]
 
-global commandline_args
-
 add_table=[
             [{"Symptomatic_Infectious_Offset": 0}, "", utils.condition_sim_type, All_sim_types]
         ]
@@ -59,7 +57,9 @@ replace_table = [
         ["TB_Active_Period_Std_Dev", "TB_Active_Period_Gaussian_Std_Dev", utils.condition_exists, {"TB_Active_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param],
         ["TB_Active_Period_Mean", "TB_Active_Period_Gaussian_Mean", utils.condition_exists,{"TB_Active_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param],
         ["Infectious_Period_Std_Dev", "Infectious_Period_Gaussian_Std_Dev", utils.condition_exists, {"Infectious_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param],
-        ["Infectious_Period_Mean", "Infectious_Period_Gaussian_Mean", utils.condition_exists, {"Infectious_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param]
+        ["Infectious_Period_Mean", "Infectious_Period_Gaussian_Mean", utils.condition_exists, {"Infectious_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param],
+        ["_Log_Normal_Mean", "_Log_Normal_Mu", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
+        ["_Log_Normal_Width", "_Log_Normal_Sigma", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith]
 ]
 
 DefaultSimType = "HIV_SIM"
@@ -78,6 +78,7 @@ def getCommandLineArgs():
 def replace(fct_params):
     config_file = fct_params[0]
     addNewParameters = fct_params[1]
+    sortJson = fct_params[2]
     replaced = False  # File changed?
     print("Opening: ", config_file)
     # try to determine sim type and add parameters
@@ -105,11 +106,11 @@ def replace(fct_params):
                         if 'parameters' in j:
                             if j['parameters'].get(key, None) is None:      # add under "parameters"
                                 j['parameters'][key]=val
-                                param_added = True
+                                replaced = True
                         else:
                             if j.get(key, None) is None:
                                 j[key]=val
-                                param_added = True
+                                replaced = True
 
         replaced = utils.replace_in_dict(j, replace_table, sim_type) or replaced
 
@@ -117,7 +118,7 @@ def replace(fct_params):
             f.seek(0)
             f.truncate()
             #new_file = '\n'.join(str(line) for line in content) #create string
-            json.dump(j, f, sort_keys=commandline_args.sortJson, indent=2, separators=(',', ': '))
+            json.dump(j, f, sort_keys=sortJson, indent=4, separators=(',', ': '))
 
 
 if __name__ == '__main__':
@@ -142,10 +143,12 @@ if __name__ == '__main__':
 
     print("converting: ", [os.path.normpath(f) for f in dirs])
 
-    # for config_file in dirs:
-    #     replace(config_file)
-    fct_params = [[dir, commandline_args.addNewParameters] for dir in dirs]
-    with Pool(processes=10) as pool:
+    fct_params = [[dir, commandline_args.addNewParameters, commandline_args.sortJson] for dir in dirs]
+
+#    for param in fct_params:
+#        replace(param)
+
+    with Pool(processes=20) as pool:
         pool.map(replace, fct_params)
 
 
