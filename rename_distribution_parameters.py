@@ -59,7 +59,18 @@ replace_table = [
         ["Infectious_Period_Std_Dev", "Infectious_Period_Gaussian_Std_Dev", utils.condition_exists, {"Infectious_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param],
         ["Infectious_Period_Mean", "Infectious_Period_Gaussian_Mean", utils.condition_exists, {"Infectious_Period_Distribution": "GAUSSIAN_DISTRIBUTION"}, utils.RenameParam, utils.comp_param],
         ["_Log_Normal_Mean", "_Log_Normal_Mu", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
-        ["_Log_Normal_Width", "_Log_Normal_Sigma", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith]
+        ["_Log_Normal_Width", "_Log_Normal_Sigma", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
+        ["Duration_Before_Leaving_Distribution_Type", "Duration_Before_Leaving_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
+        ["Duration_At_Node_Distribution_Type", "Duration_At_Node_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
+        ["Risk_Distribution_Type", "Risk_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
+        ["Initial_Amount_Distribution_Type", "Initial_Amount_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith]
+
+# Those parameters have to renmaded as well
+# •	Infectious_Period_Std_Dev     LOG_NORMAL
+# •	Infectious_Period_Mean        LOG_NORMAL
+# •	Constant
+# •	Initial_Amount
+
 ]
 
 DefaultSimType = "HIV_SIM"
