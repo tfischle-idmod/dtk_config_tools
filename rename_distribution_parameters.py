@@ -71,7 +71,7 @@ replace_table = [
 # •	Infectious_Period_Mean        LOG_NORMAL
 # •	Constant
 # •	Initial_Amount
-
+        ["x_Population_Immunity", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param]
 ]
 
 DefaultSimType = "HIV_SIM"
