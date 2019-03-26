@@ -31,18 +31,12 @@ def get_path_linux2windows(path):
 
 def getCommandLineArgs():
     parser = argparse.ArgumentParser(description='Update failed tests with references from build server (bamboo)')
-    parser.add_argument("-failedonly", action='store_true', default=False, help="Failed tests only.")
     parser.add_argument("-failedonlyLinux2Win", action='store_true', default=False, help="Failed tests only. Tests"
                                                                                          "were run an Linux (Linux"
                                                                                          "build on bamboo) but tests"
                                                                                          "on Windows system are "
                                                                                          "updated.")
     parser.add_argument("-failedonly", action='store_true', default=False, help="Failed tests only.")
-    parser.add_argument("-failedonlyLinux2Win", action='store_true', default=False, help="Failed tests only. Tests "
-                                                                                         "were run an Linux (Linux "
-                                                                                         "build on bamboo) but tests " 
-                                                                                         "on Windows system are " 
-                                                                                         "updated.")
     parser.add_argument("-allwindows", action='store_true', default=False, help="Failed tests only. Tests were run an " 
                                                                                 "Windows (Windows build on bamboo) "
                                                                                 "and tests on Windows system are "
@@ -55,37 +49,13 @@ def getCommandLineArgs():
 if __name__ == '__main__':
     file_index = 1
     commandline_args = getCommandLineArgs()
-    # failedonly = False
-    # failedonlyLinux2Win = False
-    # allwindows = False
-    # bad_args = True
-    #
-    # if len(sys.argv) == 2:
-    #     file_index = 1
-    #     bad_args = False
-    # elif len(sys.argv) == 3 and sys.argv[1] == "-failedonly":
-    #     file_index = 2
-    #     failedonly = True
-    #     bad_args = False
-    # elif len(sys.argv) == 3 and sys.argv[1] == "-failedonly-Linux2Win":
-    #     file_index = 2
-    #     bad_args = False
-    #     failedonlyLinux2Win = True
-    # elif len(sys.argv) == 3 and sys.argv[1] == "-WinAll":
-    #     file_index = 2
-    #     bad_args = False
-    #     allwindows = True
-    #
-    # if bad_args:
-    #     print("usage: %s <-failedonly> xmlReportFile   To update files on a Windows machine with files of failing "
-    #           "tests on a Windows machine (i.e. VS build) " % (sys.argv[0]) )
-    #     print("usage: %s <-failedonly-Linux2Win> xmlReportFile    To update InsetChart(s) of failing tests on a "
-    #           "Windows machine with files from a Linux machine (i.e. Linux build). Files are as saved as "
-    #           "InsetChart.linux.json" % (sys.argv[0]))
-    #     print("usage: %s <-allwindows> xmlReportFile   Copies all files of a failing test from a Windwos machine to a "
-    #           "Windows machine (i.e. windows build)" % (sys.argv[0]))
 
-    report_xml = xml.parse( sys.argv[ file_index ] )
+    if len(sys.argv) == 2:
+        file_index = 1
+    elif len(sys.argv) == 3:
+        file_index = 2
+
+    report_xml = xml.parse(sys.argv[file_index])
 
     for node in report_xml.getElementsByTagName( 'failure' ):
         message = node.getAttribute( 'message' )
@@ -103,7 +73,7 @@ if __name__ == '__main__':
                 path_inset_chart = message.split()[9].replace("InsetChart.linux.json", "InsetChart.json")
                 path_inset_chart = get_path_linux2windows(path_inset_chart)
                 reg_path_linux = os.path.join(reg_path, "InsetChart.linux.json")
-                print( "copy " + path_inset_chart + " to " + reg_path_linux )
+                print( "copy " + str(path_inset_chart) + " to " + str(reg_path_linux))
                 shutil.copy(path_inset_chart, reg_path_linux)
             except:
                 print("ERROR copying ", path_inset_chart + " to " + reg_path_linux)
