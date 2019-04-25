@@ -64,7 +64,8 @@ replace_table = [
         ["Duration_At_Node_Distribution_Type", "Duration_At_Node_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
         ["Risk_Distribution_Type", "Risk_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
         ["Initial_Amount_Distribution_Type", "Initial_Amount_Distribution", utils.condition_sim_type, All_sim_types, utils.ReplaceParamEndswith, utils.comp_param_endswith],
-        ["x_Temporary_Larval_Habitat", "x_All_Larval_Habitat", utils.condition_sim_type, All_sim_types, utils.RenameParam, utils.comp_param]
+#        ["x_Temporary_Larval_Habitat", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["x_Temporary_Larval_Habitat", "x_Larval_Habitats", utils.condition_sim_type, All_sim_types, utils.RenameParam, utils.comp_param],
 
 # Those parameters have to renmaded as well
 # •	Infectious_Period_Std_Dev     LOG_NORMAL
