@@ -120,6 +120,31 @@ def find_in_dict(dic, text, value=None):
                 found = find_in_dict(dic[key], text, value) or found
     return found
 
+
+def get_all_keys(dic, keys_list):
+    if isinstance(dic, list):
+        for d in dic:
+            get_all_keys(d, keys_list)
+    elif isinstance(dic, dict):
+        for key in list(dic.keys()):
+            if dic.get(key, None) is not None:
+                if not get_all_keys(dic[key], keys_list):
+                    keys_list.add(key)
+    else:
+        return False
+
+
+
+# def get_all_keys(dl, keys_list):
+#     if isinstance(dl, dict):
+#         keys_list += dl.keys()
+#         print (dl.values())
+#         map(lambda x: get_all_keys(x, keys_list), dl.values())
+#     elif isinstance(dl, list):
+#         map(lambda x: get_all_keys(x, keys_list), dl)
+
+
+
 #def replace_in_dict(dic, replace_table, sim_type):
 #    replaced = False
 #    if isinstance(dic, list):
