@@ -1,9 +1,18 @@
 import os
 
+def compare_fct(sub_filenames, file):
+    if isinstance(sub_filenames, list):
+        for s in sub_filenames:
+            if s in file:
+                return True
+        return False
+    else:
+        return sub_filenames in file
+
 # Functions
 def getFilesFromSubDir(path, file_name, file_list=[]):
     ''' returns files (with path) as a list to every file in a directory that maches the passed filter_fct criteria'''
-    for file in [f for f in os.listdir(path) if file_name in f]:
+    for file in [f for f in os.listdir(path) if compare_fct(file_name, f)]:
         filepath = path + "/" + file
         file_list.append(os.path.normcase(filepath))
     for file in [f for f in os.listdir(path) if os.path.isdir(path+"/"+f)]:

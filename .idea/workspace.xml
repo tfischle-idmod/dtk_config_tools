@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e65f26f2-05ed-47d9-8b39-b294e568ecd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/find_unused_parameters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dtk_config_tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dtk_config_tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_unused_parameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_unused_parameters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rename_distribution_parameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/rename_distribution_parameters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
@@ -16,27 +18,41 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DtkTrunk_current_master/Regression/find_unused_parameters.py">
+        <entry file="file://$PROJECT_DIR$/add_to_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+            <state relative-caret-position="68">
+              <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/replace_in_files_reg_exp.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/replace_in_files_reg_exp_smart.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/replace_in_file_if_found_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="114" column="36" selection-start-line="114" selection-start-column="36" selection-end-line="114" selection-end-column="36" />
               <folding>
-                <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#164#175#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/find_unused_parameters.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rename_distribution_parameters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="96" column="38" lean-forward="true" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
+            <state relative-caret-position="274">
+              <caret line="104" column="143" selection-start-line="104" selection-start-column="143" selection-end-line="104" selection-end-column="143" />
               <folding>
                 <element signature="e#164#175#0" expanded="true" />
               </folding>
@@ -45,10 +61,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/find_unused_parameters.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="131" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="153">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -76,6 +101,7 @@
       <find>idx</find>
       <find>new_config_name</find>
       <find>posix</find>
+      <find>schema</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\tfischle\Github\DtkTrunk_Jonathanhhb\Regression</dir>
@@ -88,27 +114,28 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../DtkTrunk_master/Regression/update_baselines.py" />
-        <option value="$PROJECT_DIR$/rename_distribution_parameters.py" />
         <option value="$PROJECT_DIR$/../DtkTrunk_Jonathanhhb/Regression/regression_test.py" />
         <option value="$PROJECT_DIR$/../DtkTrunk_Jonathanhhb/Regression/plot_avg.py" />
         <option value="$PROJECT_DIR$/../DtkTrunk_master/Regression/regression_utils.py" />
         <option value="$PROJECT_DIR$/../DtkTrunk_current_master/Regression/regression_utils.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/../DtkTrunk_current_master/Regression/find_unused_parameters.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/find_unused_parameters.py" />
+        <option value="$PROJECT_DIR$/rename_distribution_parameters.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="2513" />
-    <option name="height" value="1625" />
+    <option name="x" value="-11" />
+    <option name="y" value="1" />
+    <option name="width" value="3017" />
+    <option name="height" value="1949" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,10 +147,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/find_unused_parameters.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -151,13 +180,13 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Python36\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DtkTrunk_current_master/Regression" />
+      <option name="SDK_HOME" value="C:\Users\tfischle\Github\dtk_config_tools\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../DtkTrunk_current_master/Regression/find_unused_parameters.py" />
-      <option name="PARAMETERS" value="-r C:\Users\tfischle\Github\DtkTrunk_master\Regression\defaults" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/find_unused_parameters.py" />
+      <option name="PARAMETERS" value="-r C:\Users\tfischle\Github\DtkTrunk\Regression\defaults" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -199,7 +228,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rename_distribution_parameters.py" />
-      <option name="PARAMETERS" value="-r C:\Users\tfischle\Github\DtkTrunk_master\ .json" />
+      <option name="PARAMETERS" value="-r C:\Users\tfischle\Github\DtkTrunk\ .json" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -233,15 +262,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="2010" height="1300" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="1" width="2011" height="1299" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29853016" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35898733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32962328" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40325344" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39982876" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -249,7 +277,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3296011" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -265,7 +293,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>126</line>
+          <line>135</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
@@ -280,9 +308,7 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/temp/update_baselines.py" />
-    <entry file="file://$USER_HOME$/OneDrive - IDMOD/OneDrive for Business/tfischle/Scripts/update_baselines.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/OneDrive - IDMOD/OneDrive for Business/tfischle/Scripts/update_baselines.py" />
     <entry file="file://$PROJECT_DIR$/add_to_config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -292,7 +318,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/replace_in_file_if_found_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
+        <state relative-caret-position="262">
           <caret line="114" column="36" selection-start-line="114" selection-start-column="36" selection-end-line="114" selection-end-column="36" />
           <folding>
             <element signature="e#164#175#0" expanded="true" />
@@ -300,115 +326,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/regression_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="520" column="55" selection-start-line="520" selection-start-column="55" selection-end-line="520" selection-end-column="55" />
-          <folding>
-            <element signature="e#424#439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/update_baselines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/Generic/1_Generic_MinimalConfig - NoCustomReport/dtk_pre_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_Jonathanhhb/Regression/plot_avg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_Jonathanhhb/Regression/regression_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="361" lean-forward="true" selection-start-line="361" selection-end-line="361" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/regression_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="95" column="59" selection-start-line="95" selection-start-column="59" selection-end-line="95" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/regression_test.py" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/update_baselines.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/Generic/1_Generic_MinimalConfig - NoCustomReport/dtk_pre_process.py" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_Jonathanhhb/Regression/plot_avg.py" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_Jonathanhhb/Regression/regression_test.py" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/regression_utils.py" />
     <entry file="file://$PROJECT_DIR$/replace_in_files_reg_exp_smart.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/replace_in_files_reg_exp.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/rename_distribution_parameters.py.orig">
+    <entry file="file://$PROJECT_DIR$/rename_distribution_parameters.py.orig" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/Generic/4_Generic_MinConfig_EnableAging/dtk_pre_process.py" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_current_master/Regression/regression_utils.py" />
+    <entry file="file://$PROJECT_DIR$/../DtkTrunk_current_master/Regression/find_unused_parameters.py" />
+    <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1581" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_master/Regression/Generic/4_Generic_MinConfig_EnableAging/dtk_pre_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="153">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_current_master/Regression/regression_utils.py">
+    <entry file="file://$PROJECT_DIR$/find_unused_parameters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="97" column="6" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
+        <state relative-caret-position="435">
+          <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rename_distribution_parameters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="96" column="38" lean-forward="true" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
+        <state relative-caret-position="274">
+          <caret line="104" column="143" selection-start-line="104" selection-start-column="143" selection-end-line="104" selection-end-column="143" />
           <folding>
             <element signature="e#164#175#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="131" selection-start-line="131" selection-end-line="131" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DtkTrunk_current_master/Regression/find_unused_parameters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/find_unused_parameters.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
