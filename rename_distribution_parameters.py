@@ -14,18 +14,6 @@ from multiprocessing import Pool
 #Constants
 All_sim_types = ["GENERIC_SIM", "VECTOR_SIM", "MALARIA_SIM", "ENVIRONMENTAL_SIM", "POLIO_SIM", "AIRBORNE_SIM", "TB_SIM", "TBHIV_SIM", "STI_SIM", "HIV_SIM", "PY_SIM", "TYPHOID_SIM", "DENGUE_SIM"]
 
-# add_table=[
-#             [{"Enable_Immunity_Distribution": 0,
-#                "Enable_Initial_Prevalence": 0,
-#                "Enable_Maternal_Infection_Transmission": 0,
-#                "Enable_Maternal_Protection": 0,
-#                "Enable_Natural_Mortality": 0,
-#                "Enable_Susceptibility_Scaling": 0,
-#                "Enable_Disease_Mortality":0,
-#                "Enable_Maternal_Antibodies_Transmission":0}, All_sim_types],
-#             [{"Enable_Skipping": 0}, ["GENERIC_SIM", "TB_SIM"]]
-#         ]
-
 add_table=[
             [{"Symptomatic_Infectious_Offset": 0}, "", utils.condition_sim_type, All_sim_types]
         ]
@@ -67,62 +55,62 @@ replace_table = [
 #        ["x_Temporary_Larval_Habitat", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 #        ["x_Temporary_Larval_Habitat", "x_Larval_Habitats", utils.condition_sim_type, All_sim_types, utils.RenameParam, utils.comp_param],
     # remove unused parameterss
-["Polio_Host_Factor", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Immunity_Initialization_Distribution_Type", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Immunity_Distribution", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Vector_Migration_Wind", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["HIV_CoInfection_Probability", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Environmental_Incubation_Period", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Heterogeneous_Infectiousness_Weibull_Scale", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Polio_Host_Factor", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Immunity_Initialization_Distribution_Type", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Immunity_Distribution", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Vector_Migration_Wind", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["HIV_CoInfection_Probability", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Environmental_Incubation_Period", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Heterogeneous_Infectiousness_Weibull_Scale", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 
 
-["Enable_Demographics_Other", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Susceptibility_Scale_Type", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Default_Shedding_Function", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Time_Dep_Birth", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Heterogeneous_Infectiousness_Weibull_Heterogeneity", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Viral_Replication_Latent_Reservoir_Exit_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["CoInfected_Mortality_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Demographics_Other", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Susceptibility_Scale_Type", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Default_Shedding_Function", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Time_Dep_Birth", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Heterogeneous_Infectiousness_Weibull_Heterogeneity", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Viral_Replication_Latent_Reservoir_Exit_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["CoInfected_Mortality_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 
-["Viral_Replication_Infected_Cell_Death_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Typhoid_Carrier_Removal_Year", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Time_Dep_Mortality", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Viral_Replication_R0", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Infectious_Period_Std_Dev", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Typhoid_Exposure_1990", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Visiting_Pool_Selection_Mode", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Viral_Replication_Infected_Cell_Death_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Typhoid_Carrier_Removal_Year", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Time_Dep_Mortality", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Viral_Replication_R0", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Infectious_Period_Std_Dev", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Typhoid_Exposure_1990", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Visiting_Pool_Selection_Mode", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 
-["Random_Type", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Demographics_Gender", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Typhoid_Carrier_Probability_Female", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Absolute_Time", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Typhoid_Environmental_Peak_Multiplier", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["STI_Coinfection_Probability", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Individual_PK_Heterogeneity", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Random_Type", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Demographics_Gender", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Typhoid_Carrier_Probability_Female", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Absolute_Time", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Typhoid_Environmental_Peak_Multiplier", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["STI_Coinfection_Probability", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Individual_PK_Heterogeneity", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 
-["Infectious_Period_Mean", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["HIV_coinfection_probability", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-# Egg_Survival_Rate used in C:\Users\tfischle\Github\DtkTrunk\Regression\Dengue\SFTs\VectorEggOvercrowding_NaturalMortality\dtk_post_process.py
-#["Egg_Survival_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Vector_Migration_Human", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Typhoid_Exposure_1991", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Environmental_Ramp_Duration", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Enable_Delayed_Hatching_When_Habitat_Dries_Up", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Infectious_Period_Mean", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["HIV_coinfection_probability", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        # Egg_Survival_Rate used in C:\Users\tfischle\Github\DtkTrunk\Regression\Dengue\SFTs\VectorEggOvercrowding_NaturalMortality\dtk_post_process.py
+        #["Egg_Survival_Rate", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Vector_Migration_Human", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Typhoid_Exposure_1991", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Environmental_Ramp_Duration", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Enable_Delayed_Hatching_When_Habitat_Dries_Up", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 
-["Enable_Timestep_Channel_In_Report", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Pool_Transmission_Mode", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Viral_Replication_Residual_VL", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["Typhoid_Carrier_Probability_Male", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-["TB_Smear_Negative_Infectious_Multiplier", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
-
-
+        ["Enable_Timestep_Channel_In_Report", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Pool_Transmission_Mode", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Viral_Replication_Residual_VL", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["Typhoid_Carrier_Probability_Male", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
+        ["TB_Smear_Negative_Infectious_Multiplier", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param],
 
 
-# Those parameters have to renmaded as well
-# •	Infectious_Period_Std_Dev     LOG_NORMAL
-# •	Infectious_Period_Mean        LOG_NORMAL
-# •	Constant
-# •	Initial_Amount
+
+        # These parameters have to renmaded as well
+        # •	Infectious_Period_Std_Dev     LOG_NORMAL
+        # •	Infectious_Period_Mean        LOG_NORMAL
+        # •	Constant
+        # •	Initial_Amount
+
         ["x_Population_Immunity", "", utils.condition_sim_type, All_sim_types, utils.DeleteLine, utils.comp_param]
 ]
 
@@ -197,7 +185,7 @@ if __name__ == '__main__':
         file_list = []
         dirs = utils.getFilesFromSubDir(WorkingDir, name_config_file, file_list)
     else:
-        dirs = [WorkingDir + "\\" + name_config_file]
+        dirs = [os.path.join(WorkingDir, name_config_file)]
 
     if commandline_args.replace_table:
         replace_table = json.loads(commandline_args.replace_table)
